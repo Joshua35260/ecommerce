@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Categories from "./components/Categories";
 import CategoryItem from "./components/CategoryItem";
+import { useEffect } from "react";
 import Footer from "./components/Footer";
 import Cart from "./screens/Cart";
 import Home from "./screens/Home";
@@ -8,16 +9,20 @@ import Login from "./screens/Login";
 import Product from "./screens/Product";
 import ProductList from "./screens/ProductList";
 import Register from "./screens/Register";
+import { useLocation } from "react-router-dom";
 import ReactGA from "react-ga4";
-import RouteChangeTracker from "./components/RouteChangeTracker";
 
 const App = () => {
-  const TRACKING_ID = "G-DKV7EG3Q54";
-  ReactGA.initialize(TRACKING_ID);
+  ReactGA.initialize("G-MMQB8VE5VR");
+  const location = useLocation();
 
+  // Fired on every route change
+  useEffect(() => {
+    ReactGA.pageview(location.pathname + location.search);
+  }, [location]);
   return (
     <>
-      <RouteChangeTracker>
+      <usePageTracking>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -26,7 +31,7 @@ const App = () => {
           <Route path="/product" element={<Product />} />
           <Route path="/list" element={<ProductList />} />
         </Routes>
-      </RouteChangeTracker>
+      </usePageTracking>
       <Footer />
     </>
   );
