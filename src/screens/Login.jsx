@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { mobile } from "../responsive";
-
+import { Helmet } from "react-helmet";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -59,18 +59,23 @@ const Links = styled.a`
 
 const Login = () => {
   return (
-    <Container>
-      <Wrapper>
-        <Title>SIGN IN</Title>
-        <Form>
-          <Input placeholder="username" />
-          <Input placeholder="password" />
-          <Button>LOGIN</Button>
-          <Links>DO NOT YOU REMEMBER THE PASSWORD?</Links>
-          <Links>CREATE A NEW ACCOUNT</Links>
-        </Form>
-      </Wrapper>
-    </Container>
+    <>
+      <Helmet>
+        <title>Login - E-shop</title>
+      </Helmet>
+      <Container>
+        <Wrapper>
+          <Title>SIGN IN</Title>
+          <Form>
+            <Input placeholder="username" />
+            <Input placeholder="password" />
+            <Button>LOGIN</Button>
+            <Links>DO NOT YOU REMEMBER THE PASSWORD?</Links>
+            <Links>CREATE A NEW ACCOUNT</Links>
+          </Form>
+        </Wrapper>
+      </Container>
+    </>
   );
 };
 

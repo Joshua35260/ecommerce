@@ -6,10 +6,13 @@ import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
 import Slider from "../components/Slider";
-
+import { Helmet } from "react-helmet";
 const Home = () => {
   return (
     <div>
+      <Helmet>
+        <title>Homepage - E-Shop</title>
+      </Helmet>
       <Announcement />
       <Navbar />
       <Slider />

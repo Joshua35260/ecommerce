@@ -11,19 +11,20 @@ import ProductList from "./screens/ProductList";
 import Register from "./screens/Register";
 import { useLocation } from "react-router-dom";
 import ReactGA from "react-ga4";
+import Helmet from "react-helmet";
 
 const App = () => {
   ReactGA.initialize("G-DKV7EG3Q54");
   const location = useLocation();
-
   // Fired on every route change
   useEffect(() => {
     ReactGA.pageview(location.pathname + location.search);
   }, [location]);
+
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<Cart />} />
