@@ -22,16 +22,15 @@ const App = () => {
   }, [location]);
   return (
     <>
-      <usePageTracking>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/list" element={<ProductList />} />
-        </Routes>
-      </usePageTracking>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/list" element={<ProductList />} />
+      </Routes>
+
       <Footer />
     </>
   );
