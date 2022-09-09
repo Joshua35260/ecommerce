@@ -13,7 +13,7 @@ import { useLocation } from "react-router-dom";
 import ReactGA from "react-ga4";
 
 const App = () => {
-  ReactGA.initialize("G-MMQB8VE5VR");
+  ReactGA.initialize("G-DKV7EG3Q54");
   const location = useLocation();
 
   // Fired on every route change
